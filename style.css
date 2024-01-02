@@ -1,0 +1,117 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Play', sans-serif;
+}
+
+body {
+    background-color: rgb(180, 180, 180);
+}
+
+/* INDEX PAGE */
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 25px;
+}
+
+.startGame {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 40px 25px;
+    background-color: #0080a774;
+    border: 1px solid #0081a7;
+    margin-top: 200px;
+}
+
+.startGame h2 {
+    margin-bottom: 30px;
+}
+
+.startGame a {
+    margin: 50px 10px 0 10px;
+    color: white;
+    background-color: black;
+    padding: 1em;
+}
+
+/* INDEX PAGE */
+
+/* NEW GAME */
+.gameCard {
+    border: 2px solid #0081a7;
+    background-color: #00b0b99c;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 200px;
+    text-align: start;
+    padding: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats>span {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.game__interface {
+    font-weight: 700;
+    font-size: 1.3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 20px 0;
+    align-items: center;
+    justify-items: center;
+}
+
+.keys {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game__keys {
+    background-color: black;
+    color: white;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.game__keys:hover {
+    opacity: 0.8;
+}
+
+.computer {
+    text-align: center;
+}
+
+small {
+    display: block;
+    margin: 20px 0;
+    color: rgb(159, 7, 7);
+    opacity: 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons a {
+    border: 1px solid #0081a7;
+    color: black;
+    padding: 1em;
+}
+
+/* NEW GAME */
