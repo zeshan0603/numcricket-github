@@ -37,12 +37,11 @@ gameKeys.forEach(function(element,index){
             userWicketsEle.textContent = userWickets;
             outMessage.style.opacity ="1";
             if(wicketDown&&userWickets<maxWickets){
-               
                 wicketDown = false;
                 console.log("out");
             } else{
                 wicketLeft = false;
-                outMessage.textContent ="game over";
+                outMessage.textContent ="0 wickets left game over";
                 console.log("wicket not left");
             }
            } else{
