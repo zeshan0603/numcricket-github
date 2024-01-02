@@ -35,8 +35,9 @@ gameKeys.forEach(function(element,index){
             console.log("wicket++")
             console.log("computer matches user");
             userWicketsEle.textContent = userWickets;
+            outMessage.style.opacity ="1";
             if(wicketDown&&userWickets<maxWickets){
-                outMessage.style.opacity ="1";
+               
                 wicketDown = false;
                 console.log("out");
             } else{
