@@ -7,7 +7,7 @@ const computerChoiceArr = [1,2,3,4,6];
 const computerChoiceEle = document.getElementById("computerChoice");
 let computerChoice = 0;
 const outMessage = document.getElementById("out");
-const maxWickets = 5;
+const maxWickets = 3;
 let wicketDown = false;
 let wicketLeft = true;
 
@@ -25,23 +25,29 @@ gameKeys.forEach(function(element,index){
         computerChoice = computerChoiceArr[randomNumber];
       
         if(wicketLeft){
-            computerChoiceEle.textContent = computerChoice;
+           computerChoiceEle.textContent = computerChoice;
+           console.log("game on");
            outMessage.style.opacity ="0";
            wicketDown = false;
            if(userChoice==computerChoice){
             wicketDown = true;
             userWickets++;
+            console.log("wicket++")
+            console.log("computer matches user");
             userWicketsEle.textContent = userWickets;
             if(wicketDown&&userWickets<maxWickets){
                 outMessage.style.opacity ="1";
                 wicketDown = false;
+                console.log("out");
             } else{
                 wicketLeft = false;
                 outMessage.textContent ="game over";
+                console.log("wicket not left");
             }
            } else{
             userRuns+=userChoice;
             userRunsEle.textContent = userRuns;
+            console.log("wicket")
            }
 
         } else{
