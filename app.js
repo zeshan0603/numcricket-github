@@ -50,11 +50,12 @@ gameKeys.forEach(function(element,index){
             console.log("wicket")
            }
 
-        } else{
-            console.log("game over");
-            outMessage.style.opacity ="1";
-            outMessage.textContent ="game over";
-        }
+        } 
+        // else{
+            // console.log("game over");
+            // outMessage.style.opacity ="1";
+            // outMessage.textContent ="game over";
+        // }
 
         // outMessage.style.opacity = 0;
 
