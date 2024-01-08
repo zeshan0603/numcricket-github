@@ -96,6 +96,14 @@ body {
     text-align: center;
 }
 
+.saved {
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin: 20px auto;
+    display: none;
+}
+
 small {
     display: block;
     margin: 20px 0;

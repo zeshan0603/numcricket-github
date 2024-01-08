@@ -7,6 +7,7 @@ const userWicketsEle = document.getElementById("wickets");
 const gameKeys = document.querySelectorAll(".game__keys");
 const computerChoiceEle = document.getElementById("computerChoice");
 const outMessage = document.getElementById("out");
+const savedMessage = document.getElementById("saved");
 const highScoreContainer = document.getElementById("highscore__list");
 let userWickets = 0;
 let userRuns = 0;
@@ -33,7 +34,8 @@ function resetGame(){
     userRunsEle.textContent = "0";
     wicketDown = false;
     wicketLeft = true;
-    console.log("reset")
+    console.log("reset");
+    savedMessage.style.display ="none";
 }
 
 
@@ -90,5 +92,6 @@ function getFinalScore() {
     // showHighScore();
     let storedScore = JSON.parse(localStorage.getItem("highScore")); // Parse the stored string back to an array
             console.log(storedScore)
+            savedMessage.style.display ="block";
   }
   
