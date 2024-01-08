@@ -1,20 +1,41 @@
-let userRuns = 0;
+
+
 const userRunsEle = document.getElementById("runs");
-let userWickets = 0;
+const backBtn = document.getElementById("back");
+const saveBtn = document.getElementById("save");
 const userWicketsEle = document.getElementById("wickets");
 const gameKeys = document.querySelectorAll(".game__keys");
-const computerChoiceArr = [1,2,3,4,6];
 const computerChoiceEle = document.getElementById("computerChoice");
-let computerChoice = 0;
 const outMessage = document.getElementById("out");
+const highScoreContainer = document.getElementById("highscore__list");
+let userWickets = 0;
+let userRuns = 0;
+const computerChoiceArr = [1,2,3,4,6];
+let computerChoice = 0;
+let highScoreArr = [];
 const maxWickets = 3;
 let wicketDown = false;
 let wicketLeft = true;
 
 
-if(wicketLeft){
-    
+
+
+function resetGame(){
+    userRuns = 0;
+    saveBtn.style.display ="none";
+    backBtn.style.display = "block";
+    userWickets =0;
+    computerChoice = 0;
+    outMessage.style.opacity ="0";
+    outMessage.textContent ="OUT";
+    userWicketsEle.textContent = "0";
+    computerChoiceEle.textContent = "0"
+    userRunsEle.textContent = "0";
+    wicketDown = false;
+    wicketLeft = true;
+    console.log("reset")
 }
+
 
 gameKeys.forEach(function(element,index){
     element.addEventListener('click',function(){
@@ -43,38 +64,17 @@ gameKeys.forEach(function(element,index){
                 wicketLeft = false;
                 outMessage.textContent ="0 wickets left game over";
                 console.log("wicket not left");
+                backBtn.style.display ="none";
+                saveBtn.style.display ="block"
             }
            } else{
             userRuns+=userChoice;
             userRunsEle.textContent = userRuns;
-            console.log("wicket")
+            console.log("wicket left")
            }
 
         } 
-        // else{
-            // console.log("game over");
-            // outMessage.style.opacity ="1";
-            // outMessage.textContent ="game over";
-        // }
 
-        // outMessage.style.opacity = 0;
-
-
-
-        // if(userChoice==computerChoice){
-        //     wicketDown = true;
-        //     if(userWickets<maxWickets && wicketDown){
-        //         outMessage.style.opacity = 1;
-        //         userWickets++;
-        //         userWicketsEle.textContent = userWickets;
-        //         userChoice = 0;
-        //         computerChoice =0;
-        //         wicketDown = false;
-        //     } else{
-        //         wicketLeft =false;
-        //         outMessage.textContent = "OVER";
-        //     }
-        // } 
     })
 })
 
@@ -82,3 +82,13 @@ function getRun(element){
    return Number(element.getAttribute("value"));
 }
 
+function getFinalScore() {
+    const highScore = document.getElementById("runs").textContent;
+    highScoreArr.push(highScore);
+    // Convert the array to a string before storing in localStorage
+    localStorage.setItem('highScore', JSON.stringify(highScoreArr)); 
+    // showHighScore();
+    let storedScore = JSON.parse(localStorage.getItem("highScore")); // Parse the stored string back to an array
+            console.log(storedScore)
+  }
+  

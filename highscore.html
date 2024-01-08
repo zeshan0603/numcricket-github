@@ -15,13 +15,48 @@
 <body>
 
     <section class="container">
-        <div class="startGame">
-            <h2>NUM CRICKET</h2>
-            <a href="new-game.html">NEW GAME</a>
-            <a href="">HIGH SCORE</a>
+        <div class="highscore">
+            <span>HighScore</span>
+            <div id="highscore__list" class="highscore__list">
+
+            </div>
+
+            <div class="highscore__btns">
+                <a href="index.html">BACK</a>
+                <button onclick="resetScore()">RESET</button>
+            </div>
+
         </div>
     </section>
-    <script src="app.js"></script>
+    <script src="app.js">
+
+    </script>
+
+    <script> function showHighScore() {
+            let storedScore = JSON.parse(localStorage.getItem("highScore")); // Parse the stored string back to an array
+            console.log(storedScore)
+            const highScoreContainer = document.getElementById("highscore__list");
+            highScoreContainer.innerHTML = ''; // Clear previous content before displaying new score
+
+            if (storedScore) {
+                // Loop through the array to display each score
+                storedScore.forEach(score => {
+                    const newScoreEle = document.createElement("span");
+                    newScoreEle.textContent = score;
+                    highScoreContainer.appendChild(newScoreEle);
+                });
+            }
+        }
+        showHighScore();
+
+        function resetScore() {
+            localStorage.clear;
+            localStorage.setItem("highScore", null)
+            document.getElementById("highscore__list").innerHTML = ""
+            console.log(localStorage.getItem("highScore"))
+        }
+
+    </script>
 
 </body>
 

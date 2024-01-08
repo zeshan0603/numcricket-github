@@ -108,10 +108,51 @@ small {
     justify-content: space-between;
 }
 
-.buttons a {
+.buttons a,
+.save_btn,
+button {
     border: 1px solid #0081a7;
     color: black;
     padding: 1em;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.save_btn {
+    display: none;
+}
+
+
+.highscore {
+    border: 1px solid rgb(0, 0, 0);
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 50%;
+}
+
+.highscore__btns a,
+.highscore__btns button {
+    font-weight: bold;
+    color: black;
+    border: 1px solid #0081a7;
+    font-size: 1rem;
+    padding: 1em;
+}
+
+.highscore>span:nth-child(1) {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.highscore__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 10px;
+}
+
+.highscore__list span {
+    font-weight: bold;
 }
 
 /* NEW GAME */
