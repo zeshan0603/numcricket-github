@@ -86,12 +86,19 @@ function getRun(element){
 
 function getFinalScore() {
     const highScore = document.getElementById("runs").textContent;
-    highScoreArr.push(highScore);
-    // Convert the array to a string before storing in localStorage
-    localStorage.setItem('highScore', JSON.stringify(highScoreArr)); 
-    // showHighScore();
-    let storedScore = JSON.parse(localStorage.getItem("highScore")); // Parse the stored string back to an array
-            console.log(storedScore)
-            savedMessage.style.display ="block";
+
+    if(!highScoreArr.includes(highScore)){
+        highScoreArr.push(highScore);
+        // Convert the array to a string before storing in localStorage
+        localStorage.setItem('highScore', JSON.stringify(highScoreArr)); 
+        // showHighScore();
+        let storedScore = JSON.parse(localStorage.getItem("highScore")); // Parse the stored string back to an array
+                console.log(storedScore)
+                savedMessage.style.display ="block";
+    } else{
+        console.log("score already there")
+    }
+
+    
   }
   
